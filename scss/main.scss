@@ -46,14 +46,12 @@ nav{
 article{
   width: auto;
   color: $primary-text-color;
-  @include flexCenter(row,space-between,center );
+  @include flexCenter(row,space-between,center);
   padding-left: 45px;
   padding-right: 45px;
   padding-top: 70px;
   .impact-section{
     @include flexCenter(column,space-evenly,flex-start);
-    display: flex;
-    flex-direction: column;
     padding-top: 50px;
     gap: 25px;
   }
@@ -70,10 +68,13 @@ article{
     width: 12vw;
     padding: 20px;
     background-color: $quaternary-color;
-    border-style: none;
     border-radius: 35px;
     color: white;
     font-size: 1em;
+    &:hover{
+      transform: scale(1.1);
+      transition-duration: 1;
+    }
   }
   img{
     width: 25vw;
@@ -97,16 +98,16 @@ section{
       padding-bottom: 60px;
     }
     .card-section{
-      @include flexCenter(row,space-evenly,center);
       width: auto;
       height: auto;
+      @include flexCenter(row,space-evenly,center);
       flex-wrap: wrap;
       column-gap: 200px;
       row-gap: 80px;
     }
     .product-card{
       width: 14vw;
-      height: 45vh;
+      height: 50vh;
       background-color: $secondary-color;
       color: $primary-text-color;
       padding: 20px;
@@ -149,6 +150,7 @@ section{
   padding-bottom: 60px;
   h2{
     font-weight: bold;
+    padding-bottom: 60px
   }
   .mission-section{
     @include flexCenter(row,space-evenly,center);
@@ -171,9 +173,55 @@ section{
   }
 }
 
+.gallery{
+  h2{
+    font-weight: bold;
+    padding-bottom: 60px
+  }
+  .gallery-images{
+    @include flexCenter(row,space-between,center);
+    img{
+      width: 28vw;
+      height: 45vh;
+      object-fit: cover;
+      object-position: 5px 35%;
+      border-radius: 16px;
+      &:hover{
+        transform: scale(1.1);
+      }
+    }
+  }
+} 
+
+.location{
+  color: #E86424;
+  h2{
+    padding-bottom: 60px;
+    padding-top: 60px
+  }
+  .map{
+    @include flexCenter(row,center,center);
+    padding-bottom: 50px;
+    img{
+      width: 90%;
+    }
+  }
+  h3,p{
+    font-size: $paragraph-size;
+  }
+}
+
 footer{
   background-color: $quaternary-color;
   width: 100%;
-  height: 250px;
+  height: auto;
   color: white;
+  .titles{
+    padding: 40px;
+  }
+  .social-media{
+    @include flexCenter(row,center,center);
+    gap: 40px;
+    padding-bottom: 40px;
+  }
 }
